@@ -4278,13 +4278,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const wait_1 = __webpack_require__(81);
-const github_1 = __importDefault(__webpack_require__(469));
+const gh = __importStar(__webpack_require__(469));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -4294,7 +4291,7 @@ function run() {
             yield wait_1.wait(parseInt(ms, 10));
             core.debug(new Date().toTimeString());
             core.setOutput('time', new Date().toTimeString());
-            core.debug(JSON.stringify(github_1.default.context));
+            core.debug(JSON.stringify(gh.context));
         }
         catch (error) {
             core.setFailed(error.message);

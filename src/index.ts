@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import {wait} from './wait'
 
-import gh from '@actions/github'
+import * as gh from '@actions/github'
 
 async function run(): Promise<void> {
   try {
