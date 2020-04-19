@@ -1,6 +1,8 @@
 import * as core from '@actions/core'
 import {wait} from './wait'
 
+import gh from "@actions/github"
+
 async function run(): Promise<void> {
   try {
     const ms: string = core.getInput('milliseconds')
@@ -11,6 +13,8 @@ async function run(): Promise<void> {
     core.debug(new Date().toTimeString())
 
     core.setOutput('time', new Date().toTimeString())
+
+    core.debug(JSON.stringify(gh.context))
   } catch (error) {
     core.setFailed(error.message)
   }
