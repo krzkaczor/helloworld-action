@@ -5,7 +5,8 @@
   "description": "TypeScript template action",
   "main": "lib/main.js",
   "scripts": {
-    "build": "rm -rf dist && tsc --outDir ./dist",
+    "build": "yarn clean && ncc build ./src/index.ts -o ./dist",
+    "clean": "rm -rf dist",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
